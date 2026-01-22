@@ -47,7 +47,8 @@ SELECT
     mesure_reseau.debit_mbps,
     equipement.nom 
 FROM mesure_reseau 
-JOIN equipement ON mesure_reseau.id_interface = equipement.id_equipement;
+JOIN interface ON mesure_reseau.id_interface = interface.id_equipement;
+JOIN equipement  ON interface.id_equipement = equipement.id_equipement;
 ```
 ### Q2 - Détails des mesures avec le nom de l'interface
 ```sql
